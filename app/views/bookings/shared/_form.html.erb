@@ -1,0 +1,44 @@
+<br><br><br>
+<section id="services" class="bg-light">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+
+      <%= form_for([@booking],  html: { multipart: true }) do |f| %>
+        <% if booking.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(booking.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+            <ul>
+              <% booking.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :date %>
+          <%= f.date_field :date, class: "datepicker" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :hour %>
+          <%= f.text_field :hour %>
+        </div>
+
+        <div class="field">
+          <%= f.label :description %>
+          <%= f.text_field :description %>
+        </div>
+
+        <div class="actions">
+          <%= submit_tag "Enviar", class: "btn btn-primary btn-lg white"  %>
+
+          <%= link_to 'Back', bookings_path, class: 'btn btn-primary btn-lg white' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</section>

@@ -1,0 +1,44 @@
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>Reserva - Agenda Sala de Reunião</h1>
+  </div>
+</header>
+
+<p id="notice"><%= notice %></p>
+
+<section id="services" class="bg-light">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+
+      <table>
+        <thead>
+          <tr>
+            <th><h2>Day</h2></th>
+            <th><h2>Hour</h2></th>
+            <th><h2>Description</h2></th>
+            <th><h2>User</h2></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @bookings.each do |booking| %>
+            <tr>
+              <td style="padding: 20px;" ><%= booking.date %></td>
+              <td style="padding: 20px;" ><%= booking.hour %></td>
+              <td style="padding: 20px;" ><%= booking.description %></td>
+              <td style="padding: 20px;"><%= booking.user_id %></td>
+              <td style="padding: 20px;"><%= link_to 'Edit', edit_booking_path(booking) %></td>
+              <td style="padding: 20px;"><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to 'New Booking', new_booking_path, class: 'btn btn-primary btn-lg white' %>
+    </div>
+  </div>
+</div>
+</section>
+

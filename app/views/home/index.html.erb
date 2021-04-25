@@ -1,0 +1,61 @@
+<header class="bg-primary text-white">
+<div class="container text-center">
+  <h1>Agenda Sala de Reunião</h1>
+</div>
+</header>
+
+<section id="services" class="bg-light">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="page-header">
+        <div class="row">
+          <div class="col-sm-12 col-lg-12">
+          <%= form_tag home_index_path, method: :get do %>
+            <div class="row">
+              <%= date_field_tag :new_day, value: Time.current, class: 'date-field' %>
+              <%= submit_tag 'Pesquisar', class: 'btn btn-primary btn-lg white' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="row" id="calendar">
+          <div class="col-sm-12 col-lg-12">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <th>Horário</th>
+                <% @weekdays.each_with_index do |day, ind| %>
+                   <input type="hidden" id="base-date" value=<%=@dates[ind]%> >
+                  <th scope="col"> <%= "#{day} - #{@dates[ind]}" %></th>
+                <% end %>
+              </thead>
+              <tbody>
+                <% @timetables.each do |hour| %>
+                  <tr>
+                    <th style="background-color:#424242;color:white;"> <%="#{hour}"%></th>
+                    <td>
+                      <%= render partial: 'home/shared/appointments', locals: {num: 0, hour: hour} %>
+                    </td>
+                    <td>
+                      <%= render partial: 'home/shared/appointments', locals: {num: 1, hour: hour} %>
+                    </td>
+                    <td>
+                      <%= render partial: 'home/shared/appointments', locals: {num: 2, hour: hour} %>
+                    </td>
+                    <td>
+                      <%= render partial: 'home/shared/appointments', locals: {num: 3, hour: hour} %>
+                    </td>
+                    <td>
+                      <%= render partial: 'home/shared/appointments', locals: {num: 4, hour: hour} %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
