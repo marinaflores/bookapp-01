@@ -59,3 +59,10 @@
 </div>
 </section>
 
+<%= link_to '#', class: "btn btn-primary btn-lg white",
+data: {toggle: 'modal', target:'#sendMailModal'}  do%>
+  <i class="bi bi-calendar-x-fill">Teste</i>
+<% end %>
+
+
+<%= render partial: 'home/shared/new' %>

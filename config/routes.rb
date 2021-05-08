@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'home/index'
+  resources :home, except: [:show]
   root 'home#index' # pagina inicial
 
 

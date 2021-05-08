@@ -37,6 +37,11 @@ gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 #Fullcalendar
 gem 'fullcalendar-rails'
 
+#
+gem 'popper_js', '~> 2.9.2'
+#
+gem 'jquery-ui-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -51,6 +56,15 @@ group :development, :test do
   gem 'byebug'
   # Better error page for Rack apps
   gem 'better_errors'
+  #
+  gem 'rspec-rails', '3.6.0'
+  #
+  gem 'spring-commands-rspec'
+  #
+  gem 'capybara'
+  #
+  gem 'factory_bot_rails'
+
 end
 
 group :development do

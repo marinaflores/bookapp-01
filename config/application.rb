@@ -32,5 +32,17 @@ module Bookapp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+     # Don't generate system test files.
+    config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.test_framework :rspec,
+        fixtures: false,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false
+    end
+
   end
 end
