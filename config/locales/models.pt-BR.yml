@@ -1,0 +1,26 @@
+'pt-BR':
+  activerecord:
+    models:
+      booking:
+        one: Reserva
+        other: Reservas
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      booking:
+        id: Código
+        created_at: Criado em
+        updated_at: Atualizado em
+        date: Data
+        hour: Hora
+        description: Descrição
+        user_id: Código do usuário
+      user:
+        id: Código
+        created_at: Criado em
+        updated_at: Atualizado em
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmação de senha
+

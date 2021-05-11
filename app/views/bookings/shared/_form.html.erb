@@ -1,4 +1,8 @@
-<br><br><br>
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>Reservar Sala de Reunião</h1>
+  </div>
+</header>
 <section id="services" class="bg-light">
 <div class="container">
   <div class="row">
@@ -17,25 +21,40 @@
           </div>
         <% end %>
 
-        <div class="field">
-          <%= f.label :date %>
-          <%= f.date_field :date, class: "datepicker" %>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= f.label :date %>
+              <%= f.date_field :date, class: "datepicker form-control" %>
+            </div>
+          </div>
         </div>
 
-        <div class="field">
-          <%= f.label :hour %>
-          <%= f.text_field :hour %>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= f.label :hour %>
+              <%= f.select :hour , [['08:00', '08:00'], ['09:00', '09:00'], ['10:00', '10:00'], ['11:00', '11:00'], ['12:00', '12:00'], ['13:00', '13:00'], ['14:00', '15:00'], ['16:00', '16:00'],['17:00', '17:00']], {}, { class: "form-control" }%>
+            </div>
+          </div>
         </div>
 
-        <div class="field">
-          <%= f.label :description %>
-          <%= f.text_field :description %>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= f.label :description %>
+              <%= f.text_area :description,  rows: 5, class: "form-control"  %>
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= submit_tag "#{t('buttons.save')}", class: "btn btn-primary btn-lg white"  %>
 
-        <div class="actions">
-          <%= submit_tag "Enviar", class: "btn btn-primary btn-lg white"  %>
-
-          <%= link_to 'Back', bookings_path, class: 'btn btn-primary btn-lg white' %>
+              <%= link_to "#{t('buttons.back')}", bookings_path, class: 'btn btn-primary btn-lg white' %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

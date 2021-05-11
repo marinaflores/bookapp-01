@@ -1,12 +1,14 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
   <div class="container">
-    <i class="navbar-brand js-scroll-trigger" href="#page-top">BookApp</i>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <i class="navbar-brand js-scroll-trigger" >BookApp</i>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to home_index_path do %>
+            <i class="nav-link js-scroll-trigger">Agenda</i>
+          <% end %>
+        </li>
         <li class="nav-item">
           <%= link_to bookings_index_path do %>
             <i class="nav-link js-scroll-trigger">Reserva</i>
